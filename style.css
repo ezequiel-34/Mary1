@@ -1,96 +1,26 @@
-body {
-  margin: 0;
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   overflow: hidden;
-  font-family: 'Georgia', serif;
-  background: pink;
 }
 
-/* CORAZONES */
-.hearts::before {
-  content: "💖 💕 💗 💘 💝 💓";
+.heart {
   position: absolute;
-  width: 100%;
-  animation: fall 10s linear infinite;
-  font-size: 30px;
-}
-
-@keyframes fall {
-  0% {transform: translateY(-100%);}
-  100% {transform: translateY(100vh);}
-}
-
-/* LIBRO CERRADO */
-.libro {
-  position: relative;
-  width: 300px;
-  margin: 100px auto;
-}
-
-.libro-img {
-  width: 100%;
-}
-
-.candado {
-  width: 40px;
-  height: 40px;
-  background: gray;
-  position: absolute;
-  bottom: 50px;
-  left: 130px;
-  border-radius: 10px;
-}
-
-#llave {
-  width: 60px;
-  position: absolute;
-  bottom: -80px;
-  left: 120px;
-  cursor: grab;
-}
-
-/* LIBRO ABIERTO */
-.hidden {
-  display: none;
-}
-
-.book {
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-  text-align: center;
-}
-
-.page {
-  display: none;
-  animation: fade 1s;
-}
-
-.page.active {
-  display: block;
-}
-
-.page img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.page p {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.7);
-  padding: 10px;
-  border-radius: 10px;
-}
-
-@keyframes fade {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-button {
-  margin: 10px;
-  padding: 10px;
+  top: -10px;
+  color: #ff4d88;
   font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  background: white;
+  animation: caer linear infinite;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(-10vh) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(50px);
+    opacity: 0;
+  }
 }
