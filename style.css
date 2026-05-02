@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #ffc0cb;
+  background: pink;
   overflow: hidden;
+  font-family: sans-serif;
 }
 
 /* CORAZONES */
@@ -10,18 +10,17 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .heart {
   position: absolute;
-  color: #ff2e6f;
-  animation: caer linear forwards;
+  color: red;
+  animation: caer linear;
 }
 
 @keyframes caer {
-  0% { transform: translateY(-10vh); opacity: 1; }
-  100% { transform: translateY(110vh); opacity: 0; }
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
 }
 
 /* INICIO */
@@ -33,85 +32,40 @@ body {
 }
 
 .libro {
+  width: 200px;
+  height: 250px;
+  background: #ff6f91;
   position: relative;
-  width: 220px;
-  height: 300px;
-  background: #ff8fab;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* TAPA */
-.tapa {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-}
-
-/* CANDADO */
 #candado {
-  width: 30px;
-  height: 30px;
-  background: gray;
   position: absolute;
   bottom: 20px;
-  left: 95px;
-  border-radius: 6px;
+  left: 80px;
+  font-size: 30px;
 }
 
-/* LLAVE */
 #llave {
   position: absolute;
-  bottom: -80px;
-  left: 90px;
+  bottom: -60px;
+  left: 80px;
   font-size: 40px;
-  cursor: grab;
 }
 
-/* APP */
+/* LIBRO */
 .hidden {
   display: none;
 }
 
 #app {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-/* PAGINAS */
-.pagina {
-  display: none;
-  width: 90%;
-  max-width: 350px;
-  text-align: center;
-  animation: fade 0.5s;
-}
-
-.pagina.active {
-  display: block;
-}
-
-.pagina img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.pagina p {
-  margin-top: 10px;
-  background: rgba(255,255,255,0.7);
-  padding: 10px;
-  border-radius: 10px;
-}
-
-@keyframes fade {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+/* EFECTO LIBRO REAL */
 .book {
   width: 300px;
   height: 400px;
@@ -124,8 +78,8 @@ body {
   height: 100%;
   position: absolute;
   transform-origin: left;
-  transform-style: preserve-3d;
   transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
 .page.flipped {
@@ -136,9 +90,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
   background: white;
   border-radius: 10px;
+  backface-visibility: hidden;
 }
 
 .front img {
@@ -148,4 +102,8 @@ body {
 
 .back {
   transform: rotateY(180deg);
+}
+
+p {
+  padding: 10px;
 }
