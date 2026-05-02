@@ -3,63 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Libro 💖</title>
+<title>Libro</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <audio id="musica" loop>
-  <source src="audio/musica.mp3" type="audio/mp3">
+  <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div class="hearts"></div>
+<div class="start" onclick="startBook()">Abrir 💌</div>
 
-<!-- INICIO -->
-<div id="inicio">
-  <div class="libro">
-    <div id="candado">🔒</div>
-    <div id="llave">🔑</div>
+<div class="book" id="book">
+
+  <div class="spread active">
+    <div class="page">
+      <h2>Para vos 💔</h2>
+      <p>Te extraño y quiero que me perdones, sé que soy un pelotudo... pero lo que te dije era todo mentira. Me duele que lo hayas tomado en serio y de verdad te pido perdón 💔</p>
+    </div>
+    <div class="page">
+      <img src="Foto1.jpg">
+    </div>
   </div>
+
+  <div class="spread">
+    <div class="page">
+      <img src="Foto2.jpg">
+    </div>
+    <div class="page">
+      <p>Te conozco desde los 5 años y desde ahí nunca nos separamos. Aunque parezca que sos más grande que yo, jamás te dejé de lado por nadie... sos muy importante para mí ♥️</p>
+    </div>
+  </div>
+
+  <div class="spread">
+    <div class="page">
+      <p>Perdón por todo lo que hice... pero yo te quiero mucho brother 🥺</p>
+    </div>
+    <div class="page">
+      <img src="Foto3.jpg">
+    </div>
+  </div>
+
+  <div class="spread">
+    <div class="page">
+      <img src="Foto4.jpg">
+    </div>
+    <div class="page">
+      <p>Admiro lo fuerte que sos. Sos una persona muy trabajadora que siempre sigue adelante. Eso te hace increíble 💖</p>
+    </div>
+  </div>
+
 </div>
 
-<!-- LIBRO REAL -->
-<div id="app" class="hidden">
-  <div class="book">
-
-    <div class="page">
-      <div class="front">
-        <img src="img/foto1.jpg">
-        <p>Te extraño y quiero que me perdones, sé que soy un pelotudo... pero lo que te dije era todo mentira. Me duele que lo hayas tomado en serio 💔</p>
-      </div>
-      <div class="back"></div>
-    </div>
-
-    <div class="page">
-      <div class="front">
-        <img src="img/foto2.jpg">
-        <p>Te conozco desde los 5 años y nunca nos separamos... sos muy importante para mí ♥️</p>
-      </div>
-      <div class="back"></div>
-    </div>
-
-    <div class="page">
-      <div class="front">
-        <img src="img/foto3.jpg">
-        <p>Perdón por todo lo que hice... yo te quiero mucho 🥺</p>
-      </div>
-      <div class="back"></div>
-    </div>
-
-    <div class="page">
-      <div class="front">
-        <img src="img/foto4.jpg">
-        <p>Admiro lo fuerte que sos... eso te hace increíble 💖</p>
-      </div>
-      <div class="back"></div>
-    </div>
-
-  </div>
+<div class="controls">
+  <button onclick="prev()">⬅</button>
+  <button onclick="next()">➡</button>
 </div>
 
 <script src="script.js"></script>
