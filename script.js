@@ -82,3 +82,12 @@ function prev() {
     show(index);
   }
       }
+let paginas = document.querySelectorAll(".page");
+let actual = 0;
+
+document.addEventListener("click", () => {
+  if (actual < paginas.length) {
+    paginas[actual].classList.add("flipped");
+    actual++;
+  }
+});
