@@ -1,36 +1,22 @@
-let llave = document.getElementById("llave");
-let candado = document.getElementById("candado");
+function crearCorazones() {
+  const contenedor = document.querySelector(".hearts");
 
-llave.addEventListener("dragend", () => {
-  abrirLibro();
-});
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💖";
 
-function abrirLibro() {
-  document.getElementById("pantallaInicio").style.display = "none";
-  document.getElementById("libroAbierto").classList.remove("hidden");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
 
-  document.getElementById("musica").play();
+    contenedor.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+
+  }, 200);
 }
 
-/* PAGINAS */
-let pages = document.querySelectorAll(".page");
-let current = 0;
-
-function showPage(index) {
-  pages.forEach(p => p.classList.remove("active"));
-  pages[index].classList.add("active");
-}
-
-function nextPage() {
-  if (current < pages.length - 1) {
-    current++;
-    showPage(current);
-  }
-}
-
-function prevPage() {
-  if (current > 0) {
-    current--;
-    showPage(current);
-  }
-}
+crearCorazones();
